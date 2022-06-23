@@ -9,10 +9,13 @@ phases:
     commands:
       - apt-get update -y
       - apt-get install -y jq
-      - pip3 install docker
+      - pip3 install docker pytest
       - ls
+      
       # run test
+      - pip3 install pytest
       - python3 build/local-runner.py $REGION $ACCOUNT_NUMBER `pwd` dags/requirements.txt ${PY_CONSTRAINTS}
+      
       # identify changes in plugins and requirement, 
       - COMMIT_ID=$(aws ssm get-parameter --name ${COMMIT_PARAMETER} | jq -r '.Parameter.Value')
       - |- 
@@ -29,7 +32,7 @@ phases:
       - plugins=$(grep plugins/ file.txt | cat)
   build:
     commands:
-      # Get out of the cloned repo and bundle the plugins. THis will be copied to S3 bucket if the files are changed
+      # Get out of the cloned repo and bundle the plugins. This will be copied to S3 bucket if the files are changed
       - cd ../plugins
       - zip -r plugins.zip *
       - cd ..

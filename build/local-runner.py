@@ -117,8 +117,8 @@ def runIntegrityTest(mwaa):
     print("running DAG integrity test ...")
 
     exit_code, dag_test_output = mwaa.exec_run(
-        "python3 -m unittest /usr/local/airflow/test/dag_validation.py"
-        
+        #"python3 -m unittest /usr/local/airflow/test/dag_validation.py"
+        "python3 pytest /usr/local/airflow/test/test_dag_validation.py"
     )
     if (exit_code == 1):
         raise Exception(dag_test_output)
