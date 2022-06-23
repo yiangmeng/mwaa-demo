@@ -9,7 +9,7 @@ phases:
     commands:
       - apt-get update -y
       - apt-get install -y jq
-      - pip3 install docker pytest
+      - pip3 install docker
       - ls
       
       # run test
@@ -53,3 +53,8 @@ artifacts:
       files:
         - dags/*
       discard-paths: yes
+reports:
+  DAG-integrity-test-reports:
+    files:
+      - "/usr/local/airflow/test/reports/*.xml"
+    file-format: "JUNITXML"
