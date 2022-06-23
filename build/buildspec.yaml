@@ -56,5 +56,5 @@ artifacts:
 reports:
   DAG-integrity-test-reports:
     files:
-      - "/usr/local/airflow/test/reports/*.xml"
+      - "test/reports/*.xml"
     file-format: "JUNITXML"
