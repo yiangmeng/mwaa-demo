@@ -17,18 +17,22 @@ phases:
          if ["$Env"] = "dev"; then
            echo "This is DEV environment"
          fi
+      -
       - |
          if ["$Env"] = "uat"; then
            echo "This is UAT environment"
          fi
+      -
       - |
          if ["$Env"] = "prod"; then
            echo "This is PRODUCTION environment"
          fi
+      -
       - |
          if ["$Env"] = "stage"; then
            echo "This is Stage environment"
-         fi   
+         fi
+      -
       
       # run test
       - pip3 install pytest
