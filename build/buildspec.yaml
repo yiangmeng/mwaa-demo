@@ -14,22 +14,22 @@ phases:
       
       # Environment based commands
       - |-
-         if ["$MWAA_ENV"] = "dev"; then
+         if ["$ENV"] = "dev"; then
            echo "This is DEV environment"
          fi
       -
       - |
-         if ["$MWAA_ENV"] = "uat"; then
+         if ["$ENV"] = "uat"; then
            echo "This is UAT environment"
          fi
       -
       - |
-         if ["$NWAA_ENV"] = "prod"; then
+         if ["$ENV"] = "prod"; then
            echo "This is PRODUCTION environment"
          fi
       -
       - |
-         if ["$MWAA_ENV"] = "stage"; then
+         if ["$ENV"] = "stage"; then
            echo "This is Stage environment"
          fi
       -
