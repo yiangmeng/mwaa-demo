@@ -12,6 +12,20 @@ phases:
       - pip3 install docker
       - ls
       
+      # Environment based commands
+      - |
+         if expr "${Env}" : "dev"; then
+           echo "This is DEV environment"
+         fi
+      - |
+         if expr "${Env}" : "uat"; then
+           echo "This is UAT environment"
+         fi
+      - |
+         if expr "${Env}" : "prod"; then
+           echo "This is PRODUCTION environment"
+         fi
+      
       # run test
       - pip3 install pytest
       - python3 build/local-runner.py $REGION $ACCOUNT_NUMBER `pwd` dags/requirements.txt ${PY_CONSTRAINTS}
