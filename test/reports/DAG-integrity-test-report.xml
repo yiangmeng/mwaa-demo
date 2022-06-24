@@ -1,0 +1,16 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<testsuite errors = "0" failures = "0"
+name = "pytest" skips = "0" tests = "2" time = "0.061">
+
+<testcase classname = "test_import_dags"
+file = "test_import_dags.py"
+line = "13" name = "test_import_dags"
+time = "0.00155973434448">
+</testcase>
+
+<testcase classname = "test_parse_time"
+file = "test_parse_time.py"
+line = "18" name = "test_parse_time"
+time = "0.000945091247559">
+</testcase>
+</testsuite>
